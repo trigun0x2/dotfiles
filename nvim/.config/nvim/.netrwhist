@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/jeffreytong/.nvim'
+let g:netrw_dirhist_2='/home/trigun0x2'
+let g:netrw_dirhist_3='/home/trigun0x2/.config/i3'
+let g:netrw_dirhist_4='/home/trigun0x2/projects/streamlabs-dev-environment/streamlabs.com/laravel'
+let g:netrw_dirhist_5='/home/trigun0x2/dotfiles'
+let g:netrw_dirhist_6='/home/jeff/.config/i3'

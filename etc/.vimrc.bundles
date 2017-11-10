@@ -1,0 +1,79 @@
+call plug#begin('~/.vim/plugged')
+" Define bundles via Github repos
+" Plug 'kien/ctrlp.vim'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => SHIT I'M FORGETTING TO USE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" <C-P> AFTER pasting = next in 'register' aka yankring <C-N> = PREV
+Plug 'vim-scripts/YankRing.vim'
+" + to expand visual select _ to reduce
+Plug 'terryma/vim-expand-region'
+" :Gist to post a gist
+Plug 'mattn/gist-vim'
+Plug 'mattn/webapi-vim'
+Plug 'mattn/emmet-vim'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => WTF ARE THESE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plug 'MarcWeber/vim-addon-mw-utils'
+" Plug 'tomtom/tlib_vim'
+" Plug 'tpope/vim-fugitive'
+" Plug 'vim-scripts/closetag.vim'
+" Plug 'garbas/vim-snipmate'
+" Plug 'honza/vim-snippets'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Do I really need this?
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Essential
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colour Scheme
+Plug 'junegunn/seoul256.vim'
+" <C-T> in visual to comment stuff out
+Plug 'vim-scripts/tComment'
+" , b to look through all the buffers
+Plug 'troydm/easybuffer.vim'
+" Easily move around with ,,s and type first letter
+Plug 'Lokaltog/vim-easymotion'
+" Add/Change/Delete brackets, etc
+Plug 'tpope/vim-surround'
+" Easily align stuff
+Plug 'junegunn/vim-easy-align'
+" Syntax checker
+Plug 'scrooloose/syntastic'
+" Bottom bar for details
+Plug 'bling/vim-airline'
+" Quotes brackets, etc in pairs
+Plug 'jiangmiao/auto-pairs'
+Plug 'ervandew/supertab'
+Plug 'vim-scripts/ctags.vim'
+
+" Language Specific
+" Plug 'tpope/vim-rails'
+" Plug 'vim-ruby/vim-ruby'
+" Plug 'slim-template/vim-slim'
+" Plug 'elixir-lang/vim-elixir'
+Plug 'posva/vim-vue'
+" Add end to for ruby def
+Plug 'tpope/vim-endwise'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Editing
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use % to match a lot of stuff
+" Plug 'vim-scripts/matchit.zip'
+" Fuzzy Searching
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'wezm/fzf.vim', { 'branch': 'rg'  }
+" Text Specific
+
+
+if filereadable(expand("~/.vimrc.bundles.local"))
+  source ~/.vimrc.bundles.local
+endif
+
+" Add plugins to &runtimepath
+call plug#end()

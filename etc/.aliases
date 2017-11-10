@@ -1,0 +1,26 @@
+alias man='nocorrect man'
+alias cd='nocorrect cd'
+alias cp='nocorrect cp'
+alias _='sudo'
+alias b='${(z)BROWSER}'
+alias cp="${aliases[cp]:-cp} -i"
+alias e='${(z)VISUAL:-${(z)EDITOR}}'
+#alias e='nvim'
+alias ln="${aliases[ln]:-ln} -i"
+alias mkdir="${aliases[mkdir]:-mkdir} -p"
+alias mv="${aliases[mv]:-mv} -i"
+alias rm="${aliases[rm]:-rm} -i"
+alias type='type -a'
+alias ls='ls -fGH'
+
+# Tmux
+alias tml="tmux list-sessions"
+alias tma="tmux -2 attach -t"
+alias tmk="tmux kill-session -t"
+
+alias weather="curl wttr.in"
+
+# Global dirs
+alias proj="cd ~/projects"
+
+source ~/.aliases.local

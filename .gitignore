@@ -1,0 +1,5 @@
+vim/bundle/*
+vim/plugged/*
+vimrc.local
+zshrc.local
+aliases.local

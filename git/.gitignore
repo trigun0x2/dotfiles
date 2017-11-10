@@ -1,0 +1,21 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.sw[nop]
+.bundle
+.env
+db/*.sqlite3
+log/*.log
+rerun.txt
+tags
+tmp/**/*
+!tmp/cache/.keep
+
+# TODO
+.todos
