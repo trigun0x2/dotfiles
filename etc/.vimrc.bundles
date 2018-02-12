@@ -57,6 +57,7 @@ Plug 'vim-scripts/ctags.vim'
 " Plug 'slim-template/vim-slim'
 " Plug 'elixir-lang/vim-elixir'
 Plug 'posva/vim-vue'
+Plug 'tomlion/vim-solidity'
 " Add end to for ruby def
 Plug 'tpope/vim-endwise'
 

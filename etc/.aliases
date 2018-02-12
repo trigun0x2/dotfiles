@@ -18,7 +18,7 @@ alias tml="tmux list-sessions"
 alias tma="tmux -2 attach -t"
 alias tmk="tmux kill-session -t"
 
-alias weather="curl wttr.in"
+alias weather="curl wttr.in?m"
 
 # Global dirs
 alias proj="cd ~/projects"

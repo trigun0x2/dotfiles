@@ -37,6 +37,9 @@ bindsym $mod+shift+Return exec "termite `xcwd`"
 # kill focused window
 bindsym $mod+shift+q kill
 
+# lock screen
+bindsym $mod+control+l exec i3lock
+
 # start dmenu (a program launcher)
 bindsym $mod+d exec rofi -show run
 # there also is the (new) i3-dmenu-desktop which only displays applications
@@ -92,6 +95,9 @@ set $ws1 "1: "
 set $ws2 "2: "
 set $ws3 "3: "
 set $ws4 "4: "
+
+# hide border if only one window is open
+hide_edge_borders smart
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -154,9 +160,11 @@ focus_follows_mouse no
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
+# bar {
+#         status_command i3status
+# }
+# Use this cool polybar instead
+exec_always --no-startup-id $HOME/script/polybar_top.sh
 
 # Enable floating for some
 for_window [class="Pavucontrol"] floating enable
@@ -174,7 +182,7 @@ bindsym XF86MonBrightnessDown exec light -U 10
 
 # App specific stuff
 for_window [class="^.*"] border pixel 1
-assign [class="Vivaldi-stable"] $ws3
+assign [class="Chromium"] $ws3
 assign [class="Franz"] $ws4
 assign [class="Enpass"] 10
 
@@ -186,4 +194,4 @@ bindsym --release $mod+shift+Print exec scrot -s
 exec_always feh --bg-scale ~/Documents/wallhaven.jpg
 exec franz-bin
 exec enpass
-exec vivaldi-stable
+exec chromium --force-device-scale-factor=1.25
