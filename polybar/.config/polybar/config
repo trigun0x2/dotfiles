@@ -365,9 +365,9 @@ menu-2-1-exec = menu-open-0
 [module/expressvpn]
 type = custom/script
 exec = ~/scripts/expressvpn.sh
-; exec-if = pgrep -x expressvpnd
+exec-if = pgrep -x expressvpnd
 format-underline = #268bd2
-interval = 2
+interval = 10
 
 [settings]
 screenchange-reload = true

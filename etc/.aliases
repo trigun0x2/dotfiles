@@ -23,4 +23,16 @@ alias weather="curl wttr.in?m"
 # Global dirs
 alias proj="cd ~/projects"
 
+# Arch stuff
+# REQUIRE pacaur
+alias pac_clean="sudo pacaur -Rs $(pacman -Qtdq)"
+alias pac_up="sudo pacman -Syu"
+
+# Misc.
+
+# Anon gist and copy link to clipboard
+gista() {
+  gist -a $1 | xsel --clipboard
+}
+
 source ~/.aliases.local

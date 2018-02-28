@@ -49,7 +49,6 @@ Plug 'bling/vim-airline'
 " Quotes brackets, etc in pairs
 Plug 'jiangmiao/auto-pairs'
 Plug 'ervandew/supertab'
-Plug 'vim-scripts/ctags.vim'
 
 " Language Specific
 " Plug 'tpope/vim-rails'

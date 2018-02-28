@@ -38,7 +38,7 @@ bindsym $mod+shift+Return exec "termite `xcwd`"
 bindsym $mod+shift+q kill
 
 # lock screen
-bindsym $mod+control+l exec i3lock
+bindsym $mod+control+l exec ~/scripts/lock.sh
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec rofi -show run
@@ -164,7 +164,7 @@ focus_follows_mouse no
 #         status_command i3status
 # }
 # Use this cool polybar instead
-exec_always --no-startup-id $HOME/script/polybar_top.sh
+exec_always --no-startup-id $HOME/scripts/polybar_top.sh
 
 # Enable floating for some
 for_window [class="Pavucontrol"] floating enable
@@ -177,6 +177,8 @@ bindsym XF86AudioMicMute exec --no-startup-id amixer set Capture toggle && killa
 bindsym $mod+F1 exec --no-startup-id pavucontrol
 bindsym XF86MonBrightnessUp exec light -A 10
 bindsym XF86MonBrightnessDown exec light -U 10
+# Multimonitor
+bindsym $mod+m move workspace to output left
 
 # Always run these
 
@@ -185,13 +187,15 @@ for_window [class="^.*"] border pixel 1
 assign [class="Chromium"] $ws3
 assign [class="Franz"] $ws4
 assign [class="Enpass"] 10
+assign [class="spotify"] 6
 
 # Screenshots
-bindsym --release $mod+Print exec scrot
-bindsym --release $mod+shift+Print exec scrot -s
+bindsym --release $mod+Print exec scrot -s
+# bindsym --release $mod+shift+Print exec scrot -s
 
 # Startup
 exec_always feh --bg-scale ~/Documents/wallhaven.jpg
 exec franz-bin
 exec enpass
+exec spotify
 exec chromium --force-device-scale-factor=1.25
