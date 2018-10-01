@@ -161,8 +161,8 @@ noremap <leader>v <C-w>v
 noremap <leader>h <C-w>s
 
 " Treat long lines as line breaks when moving around
-map j gj
-map k gk
+map <C-j>  gj
+map <C-k> gk
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /

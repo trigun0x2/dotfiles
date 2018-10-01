@@ -8,6 +8,25 @@
 ;=====================================================
 
 [colors]
+color15_i3wmthemer	    = ${xrdb:color15}
+color14_i3wmthemer	    = ${xrdb:color14}
+color13_i3wmthemer	    = ${xrdb:color13}
+color12_i3wmthemer	    = ${xrdb:color12}
+color11_i3wmthemer	    = ${xrdb:color11}
+color10_i3wmthemer	    = ${xrdb:color10}
+color09_i3wmthemer	      = ${xrdb:color9}
+color08_i3wmthemer	      = ${xrdb:color8}
+color07_i3wmthemer	      = ${xrdb:color7}
+color06_i3wmthemer	      = ${xrdb:color6}
+color05_i3wmthemer	      = ${xrdb:color5}
+color04_i3wmthemer	      = ${xrdb:color4}
+color03_i3wmthemer	      = ${xrdb:color3}
+color02_i3wmthemer	      = ${xrdb:color2}
+color01_i3wmthemer      = ${xrdb:color1}
+color00_i3wmthemer	      = ${xrdb:color0}
+foreground_i3wmthemer 	= ${xrdb:foreground}
+background_i3wmthemer 	= ${xrdb:background}
+
 ;background = ${xrdb:color0:#222}
 background = #222
 background-alt = #444
@@ -19,7 +38,7 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/top]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:eDP-1}
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -49,8 +68,8 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "Wuncon Siji:pixelsize=10;1"
 
 modules-left = i3
-; modules-center = expressvpn
-modules-right = expressvpn volume memory cpu wlan battery date
+modules-center = mpd
+modules-right = expressvpn wlan battery date
 
 tray-position = right
 tray-padding = 2
@@ -64,13 +83,19 @@ wm-restack = i3
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
+;
+; scroll-up = i3wm-wsnext
+; scroll-down = i3wm-wsprev
 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+[module/mpd]
+type = internal/mpd
+format-online = %{A1:mpc -h 127.0.0.1 toggle:}%{A3:mpc -h 127.0.0.1 next:}%{A2:mpc -h 127.0.0.1 prev:}%{A4:mpc -h 127.0.0.1 volume +2:}%{A5: mpc -h 127.0.0.1 volume -2:}<label-song>%{A}%{A}%{A}%{A}%{A}
+label-song-maxlen = 35
 
-[module/xwindow]
+[module/title]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title%
+label-maxlen = 60
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -151,19 +176,19 @@ label-urgent = %index%
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-
+; [module/mpd]
+; type = internal/mpd
+; format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+;
+; icon-prev = 
+; icon-stop = 
+; icon-play = 
+; icon-pause = 
+; icon-next = 
+;
+; label-song-maxlen = 25
+; label-song-ellipsis = true
+;
 [module/xbacklight]
 type = internal/xbacklight
 

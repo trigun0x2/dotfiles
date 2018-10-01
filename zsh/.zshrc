@@ -59,3 +59,6 @@ fi
 
 bindkey "^F" vi-cmd-mode
 export KEYTIMEOUT=1
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+[[ $TERM == xterm-termite ]] && export TERM=xterm

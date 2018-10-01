@@ -55,10 +55,11 @@ Plug 'ervandew/supertab'
 " Plug 'vim-ruby/vim-ruby'
 " Plug 'slim-template/vim-slim'
 " Plug 'elixir-lang/vim-elixir'
-Plug 'posva/vim-vue'
+" Plug 'posva/vim-vue'
 Plug 'tomlion/vim-solidity'
 " Add end to for ruby def
-Plug 'tpope/vim-endwise'
+" Plug 'tpope/vim-endwise'
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing
