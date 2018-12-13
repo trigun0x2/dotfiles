@@ -28,7 +28,7 @@ bindsym $mod+shift+Return exec "termite -d `xcwd`"
 bindsym $mod+shift+q kill
 
 # lock screen
-# bindsym $mod+control+l exec ~/scripts/lock.sh
+bindsym $mod+control+l exec --no-startup-id ~/projects/arch_scripts/lock2.sh
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec rofi -show run
@@ -305,8 +305,8 @@ focus_follows_mouse no
 # Extra Keyboard keys
 # bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +10%
 # bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -10%
-bindsym XF86AudioRaiseVolume exec amixer set Master +10%
-bindsym XF86AudioLowerVolume exec amixer set Master -10%
+# bindsym XF86AudioRaiseVolume exec amixer set Master +10%
+# bindsym XF86AudioLowerVolume exec amixer set Master -10%
 bindsym XF86AudioMute exec amixer set Master toggle
 bindsym XF86AudioMicMute exec --no-startup-id amixer set Capture toggle
 # bindsym $mod+F1 exec --no-startup-id pavucontrol
@@ -320,17 +320,21 @@ bindsym $mod+m move workspace to output left
 # App specific stuff
 for_window [class="^.*"] border pixel 1
 assign [class="Chromium"] $ws3
-assign [class="Franz"] $ws4
-assign [class="Enpass"] 10
+assign [class="Station"] $ws4
+assign [class="Enpass"] 9
 assign [class="spotify"] 6
 
 # Clipmenu
 bindsym $mod+shift+v exec CM_LAUNCHER=rofi clipmenu
 
 # Notepad
-exec --no-startup-id termite -t "notes" -e terminal_velocity
-for_window [class="Termite" title="notes"] move scratchpad, scratchpad show
-bindsym $mod+o [instance="termite" title="notes"] scratchpad show
+exec --no-startup-id standard-notes -t "standard notes"
+for_window [class="Standard Notes" instance="standard notes" title="Notes" window_role="browser-window"] move scratchpad, scratchpad show
+# bindsym $mod+o [instance="standard notes" title="standard notes"] scratchpad show
+bindsym $mod+x move scratchpad
+bindsym $mod+o scratchpad show, resize set 1800 1200, move position center
+# exec --no-startup-id termite -t "tv_notes" -e terminal_velocity
+# bindsym $mod+o [instance="termite" title="tv_notes"] scratchpad show
 # bindsym $mod+shift+ctrl+o scratchpad show
 
 # Screenshots
@@ -340,20 +344,21 @@ bindsym --release $mod+shift+Print exec scrot -s ~/screenshots/%m-%d-%T.png
 
 # Startup
 # exec_always feh --bg-scale ~/Documents/arch_onepunch.png
-exec --no-startup-id franz
+exec --no-startup-id station
 exec --no-startup-id enpass
 exec --no-startup-id spotify
 exec --no-startup-id chromium
 exec --no-startup-id volumeicon
 
 # Lock screen
-bindsym $mod+control+l exec --no-startup-id blurlock
+# bindsym $mod+control+l exec --no-startup-id blurlock
 
 # Autostart applications
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id clipit
+exec --no-startup-id clipmenud
+# exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
