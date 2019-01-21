@@ -187,9 +187,14 @@ assign [class="spotify"] 6
 bindsym $mod+shift+v exec CM_LAUNCHER=rofi clipmenu
 
 # Notepad
-exec --no-startup-id termite -t "notes" -e terminal_velocity
-for_window [class="Termite" title="notes"] move scratchpad, scratchpad show
-bindsym $mod+o [instance="termite" title="notes"] scratchpad show
+exec --no-startup-id standard-notes -t "standard notes"
+for_window [class="Standard Notes" instance="standard notes" title="Notes" window_role="browser-window"] move scratchpad, scratchpad show
+# bindsym $mod+o [instance="standard notes" title="standard notes"] scratchpad show
+bindsym $mod+x move scratchpad
+bindsym $mod+o scratchpad show, resize set 1800 1200, move position center
+# exec --no-startup-id termite -t "notes" -e terminal_velocity
+# for_window [class="Termite" title="notes"] move scratchpad, scratchpad show
+# bindsym $mod+o [instance="termite" title="notes"] scratchpad show
 # bindsym $mod+shift+ctrl+o scratchpad show
 
 # Screenshots
