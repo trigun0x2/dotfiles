@@ -40,3 +40,4 @@ color15 = #e4e4e4
 
 [options]
 font = Inconsolata 18
+clickable_url = false

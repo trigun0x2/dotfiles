@@ -2,4 +2,4 @@
 editor = nvim
 extension = .md
 extensions = .txt, .text, .md, .markdown, .mdown, .mdwn, .mkdn, .mkd, .rst
-notes_dir = ~/notes
+notes_dir = ~/gdrive/Notes
