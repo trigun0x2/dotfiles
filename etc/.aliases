@@ -35,4 +35,7 @@ gista() {
   gist -a $1 | xsel --clipboard
 }
 
+# Make alias work in sudo
+alias sudo='sudo '
+
 source ~/.aliases.local

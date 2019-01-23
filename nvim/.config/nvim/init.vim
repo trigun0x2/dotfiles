@@ -232,6 +232,9 @@ autocmd FileType php :setlocal sw=4 ts=4 sts=4
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
+"fix for yankring and neovim
+let g:yankring_clipboard_monitor=0
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local

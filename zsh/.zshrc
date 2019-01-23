@@ -39,15 +39,6 @@ unsetopt nomatch
 export VISUAL=nvim
 export EDITOR=nvim
 
-# load thoughtbot/dotfiles scripts
-export PATH="$HOME/.bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.config/composer/vendor/bin:$PATH"
-# load rbenv if available
-if which rbenv &>/dev/null ; then
-  eval "$(rbenv init -)"
-fi
-
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
