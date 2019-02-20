@@ -40,14 +40,16 @@ set $down k
 set $left j
 set $right semicolon
 
-set $WS1 "1: "
-set $WS2 "2: "
-set $WS3 "3: "
+set $WS1 "1: "
+set $WS2 "2: "
+set $WS3 "3: "
 set $WS4 "4: "
 set $WS5 "5: "
 set $WS6 "6: "
 set $WS7 "7: "
 set $WS8 "8: "
+set $WS9 "9: "
+set $WS0 "0: "
 
 # monitors
 set $Mon1 HDMI1
@@ -70,7 +72,7 @@ exec --no-startup-id xfsettingsd
 exec --no-startup-id al-compositor --start
 
 # needed for super to launch rofi through ksuperkey, see ~/.xprofile
-bindsym Mod1+F1 exec --no-startup-id rofi_run -r
+# bindsym Mod1+F1 exec --no-startup-id rofi_run -r
 
 ###########################################################
 #############         Bindings           ##################
@@ -78,8 +80,8 @@ bindsym Mod1+F1 exec --no-startup-id rofi_run -r
 
 # kill focused window
 bindsym $Mod+Shift+q kill
-bindsym Mod1+q kill
-bindsym Mod1+F4 kill
+# bindsym Mod1+q kill
+# bindsym Mod1+F4 kill
 
 # launchers
 bindsym Control+space exec --no-startup-id rofi_run -r
@@ -87,9 +89,11 @@ bindsym Control+space exec --no-startup-id rofi_run -r
 # core
 bindsym $Mod+w          exec --no-startup-id exo-open --launch WebBrowser
 bindsym $Mod+f          exec --no-startup-id exo-open --launch FileManager
-bindsym $Mod+t          exec --no-startup-id exo-open --launch TerminalEmulator
+# bindsym $Mod+t          exec --no-startup-id exo-open --launch TerminalEmulator
 bindsym $Mod+Return     exec --no-startup-id exo-open --launch TerminalEmulator
-bindsym Control+Shift+t exec --no-startup-id exo-open --launch TerminalEmulator
+# start term in current dir
+bindsym $mod+shift+Return exec "termite -d `xcwd`"
+# bindsym Control+Shift+t exec --no-startup-id exo-open --launch TerminalEmulator
 
 # logout script
 bindsym $Mod+x exec --no-startup-id rofi_run -l
@@ -133,6 +137,8 @@ bindsym $Mod+5 workspace $WS5
 bindsym $Mod+6 workspace $WS6
 bindsym $Mod+7 workspace $WS7
 bindsym $Mod+8 workspace $WS8
+bindsym $Mod+9 workspace $WS9
+bindsym $Mod+0 workspace $WS0
 
 # switch to workspace - numpad alternatives
 bindsym $mod+Mod2+KP_1 workspace $WS1
@@ -147,6 +153,9 @@ bindsym $mod+Mod2+KP_8 workspace $WS8
 # switch to next or previous workspace
 bindsym $mod+Mod1+Left workspace prev
 bindsym $mod+Mod1+Right workspace next
+
+# Multimonitor
+bindsym $mod+m move workspace to output left
 
 
 # move focused container to workspace
@@ -267,19 +276,26 @@ bindsym $Mod+Control+minus       gaps inner all     minus 5
 bindsym $Mod+Control+Shift+plus  gaps outer all     plus  5
 bindsym $Mod+Control+Shift+minus gaps outer all     minus 5
 
+focus_follows_mouse no
 ###################################################
 ############    application settings   ############
 ###################################################
 
 for_window [class="(?i)(?:qt5ct|pinentry)"] floating enable, focus
 for_window [class="(?i)(?:termite|thunar)"] focus
-for_window [class="(?i)(?:geany|firefox)"]  focus
+# for_window [class="(?i)(?:geany|firefox)"]  focus
 
 # Assign Applications to specific workspace
 # get class with xprop
-assign [class="(?i)(?:firefox)"] → $WS1
-assign [class="(?i)(?:geany)"]   → $WS2
-assign [class="(?i)(?:thunar)"]  → $WS3
+assign [class="(?i)(?:opera)"] → $WS1
+# assign [class="(?i)(?:thunar)"]  → $WS3
+assign [class="Enpass"] $WS0
+
+exec --no-startup-id standard-notes -t "standard notes"
+for_window [class="Standard Notes" instance="standard notes" title="Notes" window_role="browser-window"] move scratchpad, scratchpad show
+# bindsym $mod+o [instance="standard notes" title="standard notes"] scratchpad show
+# bindsym $mod+x move scratchpad
+bindsym $mod+o scratchpad show, resize set 1800 1200, move position center
 
 # focus, floating, & sticky
 for_window [title="(?i)(?:copying|deleting|moving)"] floating enable
