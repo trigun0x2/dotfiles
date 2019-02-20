@@ -84,7 +84,7 @@ bindsym $Mod+Shift+q kill
 # bindsym Mod1+F4 kill
 
 # launchers
-bindsym Control+space exec --no-startup-id rofi_run -r
+bindsym $Mod+d exec --no-startup-id rofi_run -r
 
 # core
 bindsym $Mod+w          exec --no-startup-id exo-open --launch WebBrowser
