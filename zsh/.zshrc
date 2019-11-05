@@ -53,3 +53,4 @@ export KEYTIMEOUT=1
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 [[ $TERM == xterm-termite ]] && export TERM=xterm
+# source /usr/share/nvm/init-nvm.sh

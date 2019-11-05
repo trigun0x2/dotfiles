@@ -88,7 +88,7 @@ bindsym $Mod+d exec --no-startup-id rofi_run -r
 
 # core
 bindsym $Mod+w          exec --no-startup-id exo-open --launch WebBrowser
-bindsym $Mod+f          exec --no-startup-id exo-open --launch FileManager
+bindsym $Mod+f          fullscreen toggle
 # bindsym $Mod+t          exec --no-startup-id exo-open --launch TerminalEmulator
 bindsym $Mod+Return     exec --no-startup-id exo-open --launch TerminalEmulator
 # start term in current dir
@@ -119,14 +119,14 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 ################################################################
 
 # workspace assignment
-workspace $WS1 output $Mon1
-workspace $WS2 output $Mon1
-workspace $WS3 output $Mon1
-workspace $WS4 output $Mon1
-workspace $WS5 output $Mon2
-workspace $WS6 output $Mon2
-workspace $WS7 output $Mon2
-workspace $WS8 output $Mon2
+# workspace $WS1 output $Mon1
+# workspace $WS2 output $Mon1
+# workspace $WS3 output $Mon1
+# workspace $WS4 output $Mon1
+# workspace $WS5 output $Mon2
+# workspace $WS6 output $Mon2
+# workspace $WS7 output $Mon2
+# workspace $WS8 output $Mon2
 
 # switch to workspace
 bindsym $Mod+1 workspace $WS1
@@ -155,7 +155,8 @@ bindsym $mod+Mod1+Left workspace prev
 bindsym $mod+Mod1+Right workspace next
 
 # Multimonitor
-bindsym $mod+m move workspace to output left
+# bindsym $mod+m move workspace to output left
+bindsym $mod+m move workspace to output down
 
 
 # move focused container to workspace
@@ -197,8 +198,8 @@ bindsym $Mod+Shift+c reload
 bindsym $Mod+space floating toggle
 floating_modifier  Mod1
 
-bindsym $Mod+Shift+z move scratchpad
-bindsym $Mod+z scratchpad show
+# bindsym $Mod+Shift+z move scratchpad
+# bindsym $Mod+z scratchpad show
 
 # change focus
 bindsym $Mod+$left  focus left
@@ -287,9 +288,8 @@ for_window [class="(?i)(?:termite|thunar)"] focus
 
 # Assign Applications to specific workspace
 # get class with xprop
-assign [class="(?i)(?:opera)"] → $WS1
+assign [class="(?i)(?:chrome)"] → $WS3
 # assign [class="(?i)(?:thunar)"]  → $WS3
-assign [class="Enpass"] $WS0
 
 exec --no-startup-id standard-notes -t "standard notes"
 for_window [class="Standard Notes" instance="standard notes" title="Notes" window_role="browser-window"] move scratchpad, scratchpad show

@@ -29,6 +29,7 @@ alias pac_clean="sudo pacman -Rns $(pacman -Qtdq)"
 alias pac_up="sudo pacaur -Syu"
 
 # Misc.
+alias init_nvm='source /usr/share/nvm/init-nvm.sh'
 
 # Anon gist and copy link to clipboard
 gista() {
