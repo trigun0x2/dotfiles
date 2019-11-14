@@ -99,7 +99,7 @@ bindsym $mod+shift+Return exec "termite -d `xcwd`"
 bindsym $Mod+x exec --no-startup-id rofi_run -l
 
 # Screenshot
-bindsym Print exec --no-startup-id "scrot '%S.png' -e 'mv $f $$(xdg-user-dir PICTURES)/ArchLabs-%S-$wx$h.png ; feh $$(xdg-user-dir PICTURES)/ArchLabs-%S-$wx$h.png'"
+bindsym --release Print exec "scrot -s '%S_%Y_%m_%d.png' -e 'mv $f ~/screenshots'"
 
 # audio
 bindsym XF86AudioPlay        exec --no-startup-id playerctl play-pause
