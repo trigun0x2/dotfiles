@@ -99,7 +99,8 @@ bindsym $mod+shift+Return exec "termite -d `xcwd`"
 bindsym $Mod+x exec --no-startup-id rofi_run -l
 
 # Screenshot
-bindsym --release Print exec "scrot -s '%S_%Y_%m_%d.png' -e 'mv $f ~/screenshots'"
+# bindsym --release Print exec "scrot -s '%S_%Y_%m_%d.png' -e 'mv $f ~/screenshots'"
+bindsym Print --release exec "scrot -s /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
 
 # audio
 bindsym XF86AudioPlay        exec --no-startup-id playerctl play-pause
